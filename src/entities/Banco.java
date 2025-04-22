@@ -6,7 +6,6 @@ public class Banco {
     private String name;
     private List<Conta> contas;
     List<Cliente> clientes;
-    private Integer proximoNumConta = 1;
 
     public Banco() {
         this.clientes = new ArrayList<>();
