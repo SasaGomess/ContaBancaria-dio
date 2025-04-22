@@ -21,7 +21,7 @@ public class Main {
         try {
             while (true) {
                 System.out.println();
-                System.out.println("Digite qual conta você quer utilizar? ");
+                System.out.println("Digite qual serviço você quer utilizar: ");
                 System.out.println();
                 System.out.println("Criar conta Poupança - [1]");
                 System.out.println("Criar conta Corrente - [2]");
@@ -146,7 +146,7 @@ public class Main {
 
         while (true) {
             System.out.println();
-            System.out.println("====Digite quais opções você deseja fazer======");
+            System.out.println("====Digite quais operações você deseja fazer======");
             System.out.println();
             System.out.println("Fazer um deposito - [1]");
             System.out.println("Fazer um saque - [2]");
@@ -196,7 +196,7 @@ public class Main {
     public static void operaçoesContaCorrente(ContaCorrente contaCorrente) {
         while (true) {
             System.out.println();
-            System.out.println("====Digite quais opções você deseja fazer======");
+            System.out.println("====Digite quais operações você deseja fazer======");
             System.out.println();
             System.out.println("Fazer um deposito - [1]");
             System.out.println("Fazer um saque - [2]");
