@@ -41,13 +41,10 @@ public class Cliente {
     }
 
     public void verificandoMaiorDe18() throws ExceptionIdade {
-        if (idade >= 18){
-            System.out.println("Idade válida");
-        }else {
+        if (idade < 18){
             throw new ExceptionIdade("Você não pode criar uma conta pois é menor de 18 anos");
         }
     }
-
     @Override
     public String toString() {
         return "Id: " + id +", nome: " + name +", idade: "+ idade;

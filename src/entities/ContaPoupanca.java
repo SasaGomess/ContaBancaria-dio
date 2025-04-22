@@ -1,6 +1,13 @@
 package entities;
 
-public class ContaPoupança extends Conta {
+public class ContaPoupanca extends Conta {
+    public ContaPoupanca() {
+    }
+
+    @Override
+    public String nomeTipoConta() {
+        return "Conta Poupança";
+    }
 
     @Override
     public void imprimirExtrato() {

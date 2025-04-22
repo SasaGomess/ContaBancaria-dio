@@ -6,6 +6,7 @@ public class Banco {
     private String name;
     private List<Conta> contas;
     List<Cliente> clientes;
+    private Integer proximoNumConta = 1;
 
     public Banco() {
         this.clientes = new ArrayList<>();
@@ -24,8 +25,11 @@ public class Banco {
         return contas;
     }
 
-    public void listaDeClientes(Cliente cliente){
+    public void adcionarClientes(Cliente cliente){
         clientes.add(cliente);
+    }
+    public void adcionarConta(Conta conta){
+        contas.add(conta);
     }
     public void listaDeContas(Conta conta){
         contas.add(conta);
@@ -33,17 +37,24 @@ public class Banco {
 
     public void exbirListaClientes(){
         for (Cliente cl : clientes){
-            System.out.println("Titular: " + cl.getName() + ", " + cl.getIdade() + " anos, ID: " + cl.getId() );
+            System.out.println("Titular: " + cl.getName() + ", " + cl.getIdade() + " anos, ID = " + cl.getId());
+            System.out.println("-----------------------------------------------------------------------------");
         }
     }
     public void exibirContas(){
         if (!contas.isEmpty()){
             for (Conta conta : contas){
-                System.out.println(conta);
+                System.out.println("TIPO: " + conta.nomeTipoConta()+ ", AGENCIA: " + conta.getAgencia() + ", NUMERO: " + conta.getNumero() + ", SALDO DISPONÍVEL: " + String.format("%.2f", conta.getSaldo()));
             }
         }
     }
-    public void buscarContasPorNumero(){
-        
+    public Conta buscarContasPorNumero(Integer numeroConta){
+        for (Conta c : contas){
+            if (c.getNumero() == numeroConta){
+                return c;
+            }
+        }
+        return null;
     }
+
 }

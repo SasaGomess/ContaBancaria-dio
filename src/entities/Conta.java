@@ -6,10 +6,13 @@ public abstract class Conta implements IntefaceConta {
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
+    protected String nome;
     protected int agencia;
     protected int numero;
     protected double saldo;
     protected Cliente cliente;
+
+    public abstract String nomeTipoConta();
 
     public Conta(double saldo) {
         this.saldo = saldo;
@@ -19,6 +22,11 @@ public abstract class Conta implements IntefaceConta {
         this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
     public int getAgencia() {
 
         return agencia;
@@ -55,11 +63,15 @@ public abstract class Conta implements IntefaceConta {
     }
 
     protected void imprimirInfoComuns() {
-        System.out.println("Id do titular" + this.cliente.getId());
+        System.out.println("Id do titular: " + this.cliente.getId());
         System.out.println("Idade do titular: " + this.cliente.getIdade());
         System.out.println("Titular: " + this.cliente.getName());
         System.out.println("Agencia: " + this.agencia);
         System.out.println("Numero: " + this.numero);
         System.out.println("Saldo: " + this.saldo);
     }
+
+
+
+
 }
